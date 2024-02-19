@@ -1,0 +1,83 @@
+﻿<html>
+<body>
+	<h1 style="text-align: center;"><strong><em>Tables</em></strong></h1>
+	<hr style="border: none; border-top: 2px solid black;" />
+	<h2 style="text-align:center;">Students</h2>
+	<table style="text-align: center; margin: 0 auto; width: 75%;">
+		<thead>
+			<tr style="background-color: dimgray; color: white">
+				<th>
+					Id
+				</th>
+				<th>
+					name
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach(var item in @Model.Students) {
+			<tr>
+				<td>
+					@item.Id
+				</td>
+				<td>
+					@item.Name
+				</td>
+			</tr>
+			}
+		</tbody>
+	</table>
+	<hr />
+	<h2 style="text-align:center;">Subjects</h2>
+	<table style="text-align: center; margin: 0 auto; width: 75%;">
+		<thead>
+			<tr style="background-color: dimgray; color: white">
+				<th>
+					Id
+				</th>
+				<th>
+					name
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach(var item in @Model.Subjects) {
+			<tr>
+				<td>
+					@item.Id
+				</td>
+				<td>
+					@item.Name
+				</td>
+			</tr>
+			}
+		</tbody>
+	</table>
+	<hr />
+	<h2 style="text-align:center;">Teachers</h2>
+	<table style="text-align: center; margin: 0 auto; width: 75%;">
+		<thead>
+			<tr style="background-color: dimgray; color: white">
+				<th>
+					Id
+				</th>
+				<th>
+					name
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach(var item in @Model.Teachers) {
+			<tr>
+				<td>
+					@item.Id
+				</td>
+				<td>
+					@item.Name
+				</td>
+			</tr>
+			}
+		</tbody>
+	</table>
+</body>
+</html>
