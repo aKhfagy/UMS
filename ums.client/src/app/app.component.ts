@@ -36,7 +36,6 @@ export class AppComponent implements OnInit {
   public getSummary() {
     this.reportService.getSummary().subscribe({
       next: (data: Blob) => {
-        console.log(data);
         saveAs(data, 'Output.pdf');
 
         this._snackbar.open('Download Starting soon...', 'Ok')
@@ -52,7 +51,6 @@ export class AppComponent implements OnInit {
   public getTables() {
     this.reportService.getTables().subscribe({
       next: (data: Blob) => {
-        console.log(data);
         saveAs(data, 'Output.doc');
 
         this._snackbar.open('Download Starting soon...', 'Ok')

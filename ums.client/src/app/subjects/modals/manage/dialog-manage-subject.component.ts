@@ -18,7 +18,6 @@ export class DialogManageSubject {
     private _subjectService: SubjectService,
     private fb: FormBuilder,
     @Inject(MAT_DIALOG_DATA) public data: ManageObj<Subject>) {
-    console.log(data);
     this.form = this.fb.group({
       name: [data.obj.name, Validators.required]
     });

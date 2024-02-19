@@ -18,7 +18,6 @@ export class DialogManageTeacher {
     private _teacherService: TeacherService,
     private fb: FormBuilder,
     @Inject(MAT_DIALOG_DATA) public data: ManageObj<Teacher>) {
-    console.log(data);
     this.form = this.fb.group({
       name: [data.obj.name, Validators.required]
     });

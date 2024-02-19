@@ -42,7 +42,6 @@ export class StudentsComponent implements OnInit {
   }
 
   getStudents() {
-    console.log(this.page, this.showDeleted);
     this._studentService.isPaged(this.page, this.showDeleted).subscribe({
       next: (result: Result<IsPagedOutputObj<Student>>) => {
         if (result.statusCode == HttpStatusCode.Ok) {
