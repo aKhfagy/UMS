@@ -1,0 +1,21 @@
+
+<mat-toolbar color="primary">
+  <span>UMS</span>
+  <span class="spacer"></span>
+  <button mat-button (click)="getSummary()">
+    Summary
+  </button>
+  <button mat-button (click)="getTables()">
+    Tables
+  </button>
+  <button mat-button (click)="logout()">
+    Logout
+  </button>
+</mat-toolbar>
+
+
+<div class="p-5">
+  <router-outlet></router-outlet>
+</div>
+
+

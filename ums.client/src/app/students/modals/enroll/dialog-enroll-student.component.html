@@ -1,0 +1,25 @@
+<h2 mat-dialog-title>Select Course to Enroll Student to (happens on selecting it)</h2>
+
+<mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Subjects</mat-label>
+    <mat-select (selectionChange)="enroll($event.value)">
+      @for (subject of subjects; track subject) {
+      <mat-option [value]="subject.id">{{subject.name}}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+
+  <mat-list>
+    @for(subject of studentSubjects; track subject) {
+    <mat-list-item>
+      <span matListItemTitle>{{subject.subject.name}}</span>
+      <span matListItemLine>{{subject.grade}}</span>
+    </mat-list-item>
+    }
+  </mat-list>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button (click)="close()">Close</button>
+</mat-dialog-actions>

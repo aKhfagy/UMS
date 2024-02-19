@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using UMS.Core.Dtos;
+using UMS.Core.Models;
+
+namespace UMS.Core.Interfaces
+{
+	public interface ISubjectService : IServiceBase<Subject, SubjectDto>
+	{
+		public ResultDto SoftDelete(DeleteDto dto);
+		public ResultDto Restore(int id);
+		public ResultDto<IsPagedOutputDto<SubjectDto>> IsPaged(IsPagedInputDto input);
+	}
+}
