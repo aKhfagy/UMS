@@ -55,11 +55,17 @@ namespace UMS.Server.Controllers
 
 			string templatePath = Path.Combine(_webHostEnvironment.ContentRootPath, "Resources/Templates", "Summary.html");
 			string htmlContent = System.IO.File.ReadAllText(templatePath);
+			var deletedStudentsCount = studentResponse.Data.Where(x => x.IsDeleted).Count();
+			var deletedSubjectsCount = subjectResponse.Data.Where(x => x.IsDeleted).Count();
+			var deletedTeachersCount = teacherResponse.Data.Where(x => x.IsDeleted).Count();
 			var data = new
 			{
 				StudentsCount = studentResponse.Data.Count,
+				DeletedStudentsCount = deletedStudentsCount,
 				SubjectsCount = subjectResponse.Data.Count,
-				TeachersCount = teacherResponse.Data.Count
+				DeletedSubjectsCount = deletedSubjectsCount,
+				TeachersCount = teacherResponse.Data.Count,
+				DeletedTeachersCount = deletedTeachersCount
 			};
 
 			var engine = new RazorEngine().Compile(htmlContent);
@@ -94,9 +100,9 @@ namespace UMS.Server.Controllers
 			string htmlContent = System.IO.File.ReadAllText(templatePath);
 			var data = new
 			{
-				Students = studentResponse.Data,
-				Subjects = subjectResponse.Data,
-				Teachers = teacherResponse.Data,
+				Students = studentResponse.Data.OrderBy(x => x.IsDeleted),
+				Subjects = subjectResponse.Data.OrderBy(x => x.IsDeleted),
+				Teachers = teacherResponse.Data.OrderBy(x => x.IsDeleted),
 			};
 
 			var engine = new RazorEngine().Compile(htmlContent);

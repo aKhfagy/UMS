@@ -9,7 +9,10 @@
 					Name
 				</th>
 				<th>
-					Count
+					Total Count
+				</th>
+				<th>
+					Deleted Count
 				</th>
 			</tr>
 		</thead>
@@ -21,6 +24,9 @@
 				<td>
 					@Model.StudentsCount
 				</td>
+				<td>
+					@Model.DeletedStudentsCount
+				</td>
 			</tr>
 			<tr>
 				<td>
@@ -29,6 +35,9 @@
 				<td>
 					@Model.SubjectsCount
 				</td>
+				<td>
+					@Model.DeletedSubjectsCount
+				</td>
 			</tr>
 			<tr>
 				<td>
@@ -36,6 +45,9 @@
 				</td>
 				<td>
 					@Model.TeachersCount
+				</td>
+				<td>
+					@Model.DeletedTeachersCount
 				</td>
 			</tr>
 		</tbody>

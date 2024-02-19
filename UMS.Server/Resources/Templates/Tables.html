@@ -12,6 +12,9 @@
 				<th>
 					name
 				</th>
+				<th>
+					Deleted?
+				</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -22,6 +25,14 @@
 				</td>
 				<td>
 					@item.Name
+				</td>
+				<td>
+					@if(item.IsDeleted) {
+					<text>Yes</text>
+					}
+					else {
+					<text>No</text>
+					}
 				</td>
 			</tr>
 			}
@@ -38,6 +49,9 @@
 				<th>
 					name
 				</th>
+				<th>
+					Deleted?
+				</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -48,6 +62,14 @@
 				</td>
 				<td>
 					@item.Name
+				</td>
+				<td>
+					@if(item.IsDeleted) {
+					<text>Yes</text>
+					}
+					else {
+					<text>No</text>
+					}
 				</td>
 			</tr>
 			}
@@ -64,6 +86,9 @@
 				<th>
 					name
 				</th>
+				<th>
+					Deleted?
+				</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -74,6 +99,14 @@
 				</td>
 				<td>
 					@item.Name
+				</td>
+				<td>
+					@if(item.IsDeleted) {
+					<text>Yes</text>
+					}
+					else {
+					<text>No</text>
+					}
 				</td>
 			</tr>
 			}
