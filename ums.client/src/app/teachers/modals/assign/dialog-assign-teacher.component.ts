@@ -30,6 +30,7 @@ export class DialogAssignTeacher {
     this._subjectService.getAll().subscribe({
       next: (result: Result<Subject[]>) => {
         this.subjects = result.data ?? [];
+        this.subjects = this.subjects.filter(x => x.isDeleted == false);
       },
       error: (err) => console.log(err),
     })
