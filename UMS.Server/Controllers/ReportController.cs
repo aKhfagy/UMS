@@ -132,48 +132,6 @@ namespace UMS.Server.Controllers
 				"Tables.doc");
 
 		}
-		[HttpGet("CorporateClientInquiryForm")]
-		[AllowAnonymous]
-		public IActionResult GetCorporateClientInquiryForm()
-		{
-			string templatePath = Path.Combine(_webHostEnvironment.ContentRootPath, "Resources/Templates", "CorporateClientInquiryForm.html");
-			string htmlContent = System.IO.File.ReadAllText(templatePath);
-			var data = new
-			{
-				One = "1",
-				Two = "1",
-				Three = "1",
-				Four = "1",
-				Five = "1",
-				Six = "1",
-				Seven = "1",
-				Eight = "1",
-			};
-
-			var engine = new RazorEngine().Compile(htmlContent);
-
-			var renderedHtml = engine.Run(data);
-
-			using MemoryStream stream = new MemoryStream();
-			using (WordprocessingDocument package = WordprocessingDocument.Create(stream, WordprocessingDocumentType.Document))
-			{
-				MainDocumentPart mainPart = package.AddMainDocumentPart();
-				mainPart.Document = new Document();
-				Body body = mainPart.Document.AppendChild(new Body());
-
-				HtmlConverter converter = new HtmlConverter(mainPart);
-				converter.ParseHtml(renderedHtml);
-				mainPart.Document.Save();
-			}
-
-			stream.Position = 0;
-
-			return File(
-				stream.ToArray(), 
-				"application/vnd.openxmlformats-officedocument.wordprocessingml.document", 
-				"form.doc");
-
-		}
 
 	}
 }
